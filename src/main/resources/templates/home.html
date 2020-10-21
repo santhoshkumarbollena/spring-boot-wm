@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>Home Page</title>
+</head>
+<body>
+<div class="container">
+	<h2>Welcome to Dogs Management System</h2>
+
+	<br />
+	<br />
+	<br />
+	<br />
+	
+	<table border="1" class="table">
+		<tr style="font-size: 13">
+			<td>ID</td>
+			<td>Name</td>
+
+			<td>Edit</td>
+
+		</tr>
+		<tr th:each="dog: ${dogs}">
+			<td><p th:text="${dog.id}" /></td>
+			<td><p th:text="${dog.name}" /></td>
+
+			<td><a
+				th:href="@{/edit?id={id}(id=${dog.id})}">EDIT</a></td>
+
+
+		</tr>
+	</table>
+		
+	</div>
+</body>
+</html>
